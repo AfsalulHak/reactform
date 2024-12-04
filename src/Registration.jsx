@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Registration = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,7 +10,7 @@ const Registration = () => {
     email: '',
     course: '',
     gender: '',
-    skills: []  // Initialize as an array
+    skills: []  
   });
 
   const navigate = useNavigate();
@@ -20,8 +21,8 @@ const Registration = () => {
     if (type === "checkbox") {
       setFormData(prevState => {
         const updatedSkills = checked
-          ? [...prevState.skills, value]  // Add the skill if checked
-          : prevState.skills.filter(skill => skill !== value);  // Remove the skill if unchecked
+          ? [...prevState.skills, value]  
+          : prevState.skills.filter(skill => skill !== value);  
         return { ...prevState, skills: updatedSkills };
       });
     } else {
@@ -38,10 +39,10 @@ const Registration = () => {
     students.push(formData);
     sessionStorage.setItem('students', JSON.stringify(students));
 
-    // Store the success message in sessionStorage
+    
     sessionStorage.setItem('registrationMessage', `${formData.name}, you are successfully registered!`);
 
-    // Redirect to the students list page
+   
     navigate('/view-students');
   };
 
@@ -53,13 +54,13 @@ const Registration = () => {
       email: '',
       course: '',
       gender: '',
-      skills: []  // Clear the skills array as well
+      skills: []  
     });
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center mt-3">
-      <form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm">
+    <div className="d-flex align-items-center justify-content-center" style={{backgroundColor:'gray' }}> 
+      <form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm" style={{backgroundColor:'wheat' }}>
         <h1 className="mb-3 text-center" style={{ color: 'rgb(38, 61, 4)' }}>Registration Form</h1>
 
         <div className="mb-3">

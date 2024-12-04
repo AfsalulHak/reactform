@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import success from './assets/success.png'
+import success from './assets/successs.png'
 
 const ViewRegistration = () => {
   const [registrationData, setRegistrationData] = useState(null);
 
   useEffect(() => {
-    // Retrieve the students' data from sessionStorage
+
     const students = JSON.parse(sessionStorage.getItem('students')) || [];
 
-    // Get the last registered student's data (or first, depending on your requirement)
+ 
     const lastRegisteredStudent = students[students.length - 1];
 
-    // Set the last registered student's data to state
+
     setRegistrationData(lastRegisteredStudent);
   }, []);
 
   return (
-    <div className="d-flex  align-items-center justify-content-center mt-3">
-    <div className=' p-4 border rounded shadow-sm'>
+    <div className="d-flex  align-items-center justify-content-center bg-dark" style={{height:'100vh'}}>
+    <div className=' p-4 border rounded shadow-sm bg-light mt-1'>
         {registrationData ? (
           <div>
             <h2 className='text-info'>Hello <span className='text-warning'>{registrationData.name}</span> </h2>
