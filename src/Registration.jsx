@@ -108,7 +108,7 @@ const Registration = () => {
         <div className="mb-3">
           <label htmlFor="course" className="form-label">Qualification:</label>
           <select name="course" value={formData.course} onChange={handleChange} className="form-select" required>
-            <option value="" disabled>Select a course</option>
+            <option value="" disabled>Select your Qualification</option>
             <option value="Bsc Cs">Bsc Computer Science</option>
             <option value="BCA">BCA</option>
             <option value="Bcom">Bcom</option>
